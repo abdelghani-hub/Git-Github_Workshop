@@ -49,7 +49,7 @@
 <br></br>
 ### Status and Logs
 `git status` <br>
-* Show the status of the repository and : 
+* Show the status of the repository and :
   * Files that are staged, unstaged, and untracked
   * The branch you are currently on
   * Files that are ignored <br>
@@ -57,10 +57,9 @@
 **options** : -s, --short, -b, --branch, --show-stash, --ignored
 
 `git log` <br>
-* Show the commit history
-* Press `q` to exit the log
-
+* Show the commit history <br>
 **options** : --oneline, --graph, --all, --decorate, --author, --since, --until, --grep, --pretty, --stat, --patch
+
 
 <br></br>
 ### Branching and Merging
@@ -98,8 +97,60 @@
 /* use `rebase` to re-anchor your feature branch to keep up with the latest changes. <br>
 then use `merge` to move those changes back onto shared branches. */
 
+<br></br>
+### Undoing Changes
+`git reset HEAD <file_name>` <br>
+* Unstage a file
+
+`git checkout -- <file_name>` <br>
+* Discard changes in the working directory
+
+`git reset --soft HEAD~1` <br>
+* Undo the last commit and keep the changes in the staging area
+
+`git reset --mixed HEAD~1` <br>
+* Undo the last commit and keep the changes in the working directory
+
+`git reset --hard HEAD~1` <br>
+* Undo the last commit and discard the changes
 
 <br></br>
 ### Remote Repository
 `git remote` <br>
 * List all the remote repositories
+
+`git remote add <remote_name> <repository_url>` <br>
+* Add a remote repository
+
+`git remote set-url origin <new-url>`
+* Change the URL of a remote repository
+
+`git remote remove <remote_name>` <br>
+* Remove a remote repository
+
+`git push <remote_name> <branch_name>` <br>
+* Push changes to a remote repository
+
+`git push -u <remote_name> <branch_name>` <br>
+* Push changes to a remote repository and set the upstream
+
+`git pull <remote_name> <branch_name>` <br>
+* Pull changes from a remote repository
+
+<br></br>
+### Stash
+`git stash` <br>
+* Stash changes in the working directory
+
+`git stash list` <br>
+* List all the stashes
+
+`git stash apply` <br>
+* Apply the last stash
+
+`git stash apply stash@{n}` <br>
+* Apply a specific stash
+
+`git stash clear` <br>
+* Clear all the stashes
+
